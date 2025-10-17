@@ -31,6 +31,7 @@
             height: 780px;
             position: relative;
             overflow: hidden;
+            transform-origin: center center;
         }
 
         .group-32-image {
@@ -271,7 +272,7 @@
             background: #145a9e;
         }
 
-        /* Адаптация для телефона с сохранением пропорций */
+        /* Адаптация для телефона с масштабированием */
         @media (max-width: 768px) {
             body {
                 padding: 15px;
@@ -282,166 +283,34 @@
             }
             
             .visiting-card {
-                width: 100%;
-                max-width: 400px;
-                height: 85vh;
-                min-height: 700px;
-                max-height: 850px;
-                border-radius: 20px;
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            }
-            
-            /* Сохраняем пропорции относительно новой высоты */
-            .profile-image {
-                height: calc(372 / 780 * 100%);
-                height: 47.7%;
-            }
-            
-            .middle-image {
-                top: calc(372 / 780 * 100%);
-                top: 47.7%;
-                height: calc(437 / 780 * 100%);
-                height: 52.3%;
-            }
-            
-            .text-block {
-                top: calc(202 / 780 * 100%);
-                top: 25.9%;
-                left: calc(11 / 320 * 100%);
-                left: 3.4%;
-            }
-            
-            .name {
-                font-size: calc(29 / 780 * 85vh);
-                font-size: 7.5vw;
-            }
-            
-            .title {
-                font-size: calc(11 / 780 * 85vh);
-                font-size: 2.8vw;
-            }
-            
-            .agency-name {
-                font-size: calc(13 / 780 * 85vh);
-                font-size: 3.3vw;
-            }
-            
-            .icon {
-                top: calc(179 / 780 * 100%);
-                top: 22.9%;
-                left: calc(11 / 320 * 100%);
-                left: 3.4%;
-                width: calc(38 / 320 * 100%);
-                width: 11.9%;
-            }
-            
-            .group-35 {
-                bottom: calc(432 / 780 * 100%);
-                bottom: 55.4%;
-                left: 16%;
-                width: calc(80 / 320 * 100%);
-                width: 25%;
-            }
-            
-            .right-icons {
-                bottom: calc(433 / 780 * 100%);
-                bottom: 55.5%;
-                right: calc(11 / 320 * 100%);
-                right: 3.4%;
-            }
-            
-            .right-icon {
-                width: calc(37 / 320 * 100%);
-                width: 11.6%;
-                height: auto;
-            }
-            
-            .formula-text {
-                bottom: calc(230 / 780 * 100%);
-                bottom: 29.5%;
-                left: calc(37 / 320 * 100%);
-                left: 11.6%;
-                right: calc(37 / 320 * 100%);
-                right: 11.6%;
-            }
-            
-            .formula-title {
-                font-size: calc(15 / 780 * 85vh);
-                font-size: 3.8vw;
-            }
-            
-            .formula-list, .formula-stats {
-                font-size: calc(11 / 780 * 85vh);
-                font-size: 2.8vw;
-            }
-            
-            .divider {
-                width: calc(87 / 320 * 100%);
-                width: 27.2%;
-            }
-            
-            .group-image-left {
-                bottom: calc(84 / 780 * 100%);
-                bottom: 10.8%;
-                left: calc(22 / 320 * 100%);
-                left: 6.9%;
-                width: calc(136 / 320 * 100%);
-                width: 42.5%;
-            }
-            
-            .right-column-icons {
-                bottom: calc(94 / 780 * 100%);
-                bottom: 12.1%;
-                right: calc(11 / 320 * 100%);
-                right: 3.4%;
-            }
-            
-            .column-item {
-                font-size: calc(9 / 780 * 85vh);
-                font-size: 2.3vw;
-            }
-            
-            .column-icon {
-                width: calc(16 / 320 * 100%);
-                width: 5%;
-                height: auto;
-            }
-            
-            .learn-more-btn {
-                bottom: calc(17 / 780 * 100%);
-                bottom: 2.2%;
-                left: calc(22 / 320 * 100%);
-                left: 6.9%;
-                right: calc(22 / 320 * 100%);
-                right: 6.9%;
-                width: calc(276 / 320 * 100%);
-                width: 86.3%;
-                font-size: calc(14.5 / 780 * 85vh);
-                font-size: 3.7vw;
-                padding: calc(15 / 780 * 85vh) calc(22 / 320 * 100%);
+                transform: scale(0.85);
+                transform-origin: center center;
             }
         }
-        
-        /* Для очень маленьких экранов */
+
+        @media (max-width: 480px) {
+            .visiting-card {
+                transform: scale(0.75);
+            }
+        }
+
         @media (max-width: 360px) {
-            .name {
-                font-size: 26px;
+            .visiting-card {
+                transform: scale(0.65);
             }
-            
-            .title {
-                font-size: 10px;
+        }
+
+        /* Для очень маленьких экранов */
+        @media (max-width: 320px) {
+            .visiting-card {
+                transform: scale(0.6);
             }
-            
-            .formula-title {
-                font-size: 14px;
-            }
-            
-            .formula-list, .formula-stats {
-                font-size: 10px;
-            }
-            
-            .learn-more-btn {
-                font-size: 13px;
+        }
+
+        /* Убираем масштабирование на очень больших экранах */
+        @media (min-width: 1200px) {
+            .visiting-card {
+                transform: scale(1.1);
             }
         }
     </style>
