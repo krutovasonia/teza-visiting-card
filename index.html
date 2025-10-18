@@ -23,7 +23,7 @@
         }
 
         .visiting-card {
-            background: url('img/iPhone 16 - 3.png') no-repeat center center;
+            background: url('./img/iPhone 16 - 3.png') no-repeat center center;
             background-size: cover;
             border-radius: 18px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -31,7 +31,6 @@
             height: 780px;
             position: relative;
             overflow: hidden;
-            transform-origin: center center;
         }
 
         .group-32-image {
@@ -88,8 +87,9 @@
         }
 
         .agency-name {
-            font-size: 13px;
-            font-weight: 400;
+            font-size: 11px;
+            font-weight: 300;
+            text-transform: uppercase;
         }
 
         .icon {
@@ -272,64 +272,176 @@
             background: #145a9e;
         }
 
-        /* Адаптация для телефона с масштабированием */
-        @media (max-width: 768px) {
+        /* Медиа-запросы для адаптации под телефон */
+        @media (max-width: 480px) {
             body {
-                padding: 15px;
-                background: linear-gradient(135deg, #186DB3 0%, #3997e4 100%);
+                padding: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #186DB3 0%, #3997e4 100%);
             }
             
             .visiting-card {
-                transform: scale(0.85);
-                transform-origin: center center;
+                width: 100%;
+                max-width: 400px;
+                height: 100vh;
+                max-height: 850px;
+                border-radius: 0;
+                box-shadow: none;
+                margin: 0 auto;
+            }
+            
+            /* Адаптация размеров для мобильных устройств */
+            .profile-image {
+                height: 40%;
+            }
+            
+            .middle-image {
+                top: 40%;
+                height: 60%;
+            }
+            
+            .text-block {
+                top: 25%;
+                left: 5%;
+                max-width: 75%;
+            }
+            
+            .name {
+                font-size: 7vw;
+            }
+            
+            .title {
+                font-size: 3vw;
+            }
+            
+            .agency-name {
+                font-size: 3vw;
+            }
+            
+            .icon {
+                top: 22%;
+                left: 5%;
+                width: 10%;
+            }
+            
+            .group-35 {
+                bottom: 52%;
+                width: 20%;
+            }
+            
+            .right-icons {
+                bottom: 53%;
+                right: 5%;
+            }
+            
+            .right-icon {
+                width: 10vw;
+                height: 10vw;
+                max-width: 42px;
+                max-height: 42px;
+            }
+            
+            .formula-text {
+                bottom: 30%;
+                left: 8%;
+                right: 8%;
+            }
+            
+            .formula-title {
+                font-size: 4vw;
+            }
+            
+            .formula-list, .formula-stats {
+                font-size: 3vw;
+            }
+            
+            .group-image-left {
+                bottom: 15%;
+                left: 5%;
+                width: 35%;
+            }
+            
+            .right-column-icons {
+                bottom: 16%;
+                right: 5%;
+            }
+            
+            .column-item {
+                font-size: 2.5vw;
+            }
+            
+            .column-icon {
+                width: 4vw;
+                height: 4vw;
+            }
+            
+            .learn-more-btn {
+                bottom: 5%;
+                left: 5%;
+                right: 5%;
+                width: 90%;
+                font-size: 4vw;
+                padding: 4vw;
             }
         }
-
-        @media (max-width: 480px) {
-            .visiting-card {
-                transform: scale(0.75);
-            }
-        }
-
-        @media (max-width: 360px) {
-            .visiting-card {
-                transform: scale(0.65);
-            }
-        }
-
+        
         /* Для очень маленьких экранов */
-        @media (max-width: 320px) {
-            .visiting-card {
-                transform: scale(0.6);
+        @media (max-width: 360px) {
+            .name {
+                font-size: 24px;
+            }
+            
+            .title {
+                font-size: 10px;
+            }
+            
+            .agency-name {
+                font-size: 10px;
+            }
+            
+            .formula-title {
+                font-size: 13px;
+            }
+            
+            .formula-list, .formula-stats {
+                font-size: 10px;
+            }
+            
+            .column-item {
+                font-size: 9px;
+            }
+            
+            .learn-more-btn {
+                font-size: 14px;
             }
         }
-
-        /* Убираем масштабирование на очень больших экранах */
-        @media (min-width: 1200px) {
+        
+        /* Для высоких экранов */
+        @media (min-height: 800px) and (max-width: 480px) {
             .visiting-card {
-                transform: scale(1.1);
+                max-height: 800px;
             }
         }
     </style>
 </head>
 <body>
     <div class="visiting-card">
-        <img src="img/Group 26 (1).png" alt="Ксения Самсонова" class="profile-image">
-        <img src="img/Rectangle 4 (1).png" alt="Дополнительная картинка" class="middle-image">
+        <img src="./img/Group 26 (1).png" alt="Ксения Самсонова" class="profile-image">
+        <img src="./img/Rectangle 4 (1).png" alt="Дополнительная картинка" class="middle-image">
         
-        <img src="img/Group 32.png" alt="Group 32" class="group-32-image">
+        <img src="./img/Group 32.png" alt="Group 32" class="group-32-image">
         
-        <img src="img/Group 7 (1).png" alt="Значок" class="icon">
+        <img src="./img/Group 7 (1).png" alt="Значок" class="icon">
         
-        <img src="img/Group 35.png" alt="Скачать визитку" class="group-35" onclick="downloadPDF()">
+        <img src="./img/Group 35.png" alt="Скачать визитку" class="group-35" onclick="downloadPDF()">
         
         <div class="right-icons">
-            <img src="img/Group 11.png" alt="Telegram" class="right-icon" onclick="openTelegram()">
-            <img src="img/Group 21.png" alt="Yandex почта" class="right-icon" onclick="openYandexMail()">
-            <img src="img/Group 24.png" alt="Поделиться" class="right-icon" onclick="shareCard()">
+            <img src="./img/Group 11.png" alt="Telegram" class="right-icon" onclick="openTelegram()">
+            <img src="./img/Group 21.png" alt="Yandex почта" class="right-icon" onclick="openYandexMail()">
+            <img src="./img/Group 24.png" alt="Поделиться" class="right-icon" onclick="shareCard()">
         </div>
         
         <div class="formula-text">
@@ -345,20 +457,20 @@
             <div class="formula-stats">Увеличиваем ROAS до 400%, удерживая CPA ниже 500</div>
         </div>
         
-        <img src="img/Group.png" alt="Group" class="group-image-left">
+        <img src="./img/Group.png" alt="Group" class="group-image-left">
         
         <!-- Картинки с текстом - ПРИБЛИЖЕНЫ К ЛЕВОМУ КРАЮ -->
         <div class="right-column-icons">
             <a href="tel:+79776331974" class="column-item">
-                <img src="img/Vector.png" alt="Телефон" class="column-icon">
+                <img src="./img/Vector.png" alt="Телефон" class="column-icon">
                 <span class="column-text">+7 (977) 633-19-74</span>
             </a>
             <a href="https://mail.yandex.ru/?uid=1130000069905&login=teza-agency#compose" class="column-item" target="_blank">
-                <img src="img/Group 17.png" alt="Email" class="column-icon">
+                <img src="./img/Group 17.png" alt="Email" class="column-icon">
                 <span class="column-text">teza-agency@yandex.ru</span>
             </a>
             <a href="https://t.me/Teza_ozon" class="column-item" target="_blank">
-                <img src="img/Group 10.png" alt="Telegram" class="column-icon">
+                <img src="./img/Group 10.png" alt="Telegram" class="column-icon">
                 <span class="column-text">@Teza_ozon</span>
             </a>
         </div>
@@ -375,7 +487,7 @@
         function downloadPDF() {
             const link = document.createElement('a');
             link.download = 'iPhone 16 - 1 (3).pdf';
-            link.href = 'img/iPhone 16 - 1 (3).pdf';
+            link.href = './img/iPhone 16 - 1 (3).pdf';
             link.click();
         }
 
