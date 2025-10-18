@@ -275,12 +275,14 @@
         /* Медиа-запросы для адаптации под телефон */
         @media (max-width: 480px) {
             body {
-                padding: 10px;
+                padding: 20px 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 min-height: 100vh;
                 background: linear-gradient(135deg, #186DB3 0%, #3997e4 100%);
+                transform: scale(0.85);
+                transform-origin: center center;
             }
             
             .visiting-card {
@@ -289,7 +291,6 @@
                 border-radius: 18px;
                 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
                 margin: 0 auto;
-                transform: none;
             }
             
             /* Все размеры остаются точно такими же как в десктопной версии */
@@ -386,10 +387,11 @@
             }
         }
         
-        /* Для очень маленьких экранов - просто центрируем карточку */
+        /* Для очень маленьких экранов */
         @media (max-width: 360px) {
             body {
-                padding: 5px;
+                padding: 15px 5px;
+                transform: scale(0.8);
             }
             
             .visiting-card {
@@ -399,8 +401,19 @@
             }
         }
         
+        /* Для средних экранов */
+        @media (min-width: 481px) and (max-width: 768px) {
+            body {
+                transform: scale(0.9);
+            }
+        }
+        
         /* Для высоких экранов */
         @media (min-height: 800px) and (max-width: 480px) {
+            body {
+                transform: scale(0.9);
+            }
+            
             .visiting-card {
                 height: 780px;
             }
@@ -409,12 +422,20 @@
         /* Для горизонтальной ориентации */
         @media (max-width: 480px) and (orientation: landscape) {
             body {
-                padding: 5px;
+                padding: 10px 5px;
+                transform: scale(0.7);
             }
             
             .visiting-card {
                 width: 320px;
                 height: 780px;
+            }
+        }
+        
+        /* Для очень высоких экранов */
+        @media (min-height: 900px) and (max-width: 480px) {
+            body {
+                transform: scale(0.95);
             }
         }
     </style>
