@@ -275,7 +275,7 @@
         /* Медиа-запросы для адаптации под телефон */
         @media (max-width: 480px) {
             body {
-                padding: 0;
+                padding: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -284,145 +284,137 @@
             }
             
             .visiting-card {
-                width: 100%;
-                max-width: 400px;
-                height: 100vh;
-                max-height: 850px;
-                border-radius: 0;
-                box-shadow: none;
+                width: 320px;
+                height: 780px;
+                border-radius: 18px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
                 margin: 0 auto;
+                transform: none;
             }
             
-            /* Адаптация размеров для мобильных устройств */
+            /* Все размеры остаются точно такими же как в десктопной версии */
             .profile-image {
-                height: 40%;
+                height: 372px;
             }
             
             .middle-image {
-                top: 40%;
-                height: 60%;
+                top: 372px;
+                height: 437px;
             }
             
             .text-block {
-                top: 25%;
-                left: 5%;
-                max-width: 75%;
+                top: 202px;
+                left: 11px;
+                max-width: 70%;
             }
             
             .name {
-                font-size: 7vw;
+                font-size: 29px;
             }
             
             .title {
-                font-size: 3vw;
+                font-size: 11px;
             }
             
             .agency-name {
-                font-size: 3vw;
+                font-size: 11px;
             }
             
             .icon {
-                top: 22%;
-                left: 5%;
-                width: 10%;
+                top: 179px;
+                left: 11px;
+                width: 38px;
             }
             
             .group-35 {
-                bottom: 52%;
-                width: 20%;
+                bottom: 432px;
+                left: 16%;
+                width: 80px;
             }
             
             .right-icons {
-                bottom: 53%;
-                right: 5%;
+                bottom: 433px;
+                right: 11px;
             }
             
             .right-icon {
-                width: 10vw;
-                height: 10vw;
-                max-width: 42px;
-                max-height: 42px;
+                width: 37px;
+                height: 37px;
             }
             
             .formula-text {
-                bottom: 30%;
-                left: 8%;
-                right: 8%;
+                bottom: 230px;
+                left: 37px;
+                right: 37px;
             }
             
             .formula-title {
-                font-size: 4vw;
+                font-size: 15px;
             }
             
             .formula-list, .formula-stats {
-                font-size: 3vw;
+                font-size: 11px;
             }
             
             .group-image-left {
-                bottom: 15%;
-                left: 5%;
-                width: 35%;
+                bottom: 84px;
+                left: 22px;
+                width: 136px;
             }
             
             .right-column-icons {
-                bottom: 16%;
-                right: 5%;
-            }
-            
-            .column-item {
-                font-size: 2.5vw;
-            }
-            
-            .column-icon {
-                width: 4vw;
-                height: 4vw;
-            }
-            
-            .learn-more-btn {
-                bottom: 5%;
-                left: 5%;
-                right: 5%;
-                width: 90%;
-                font-size: 4vw;
-                padding: 4vw;
-            }
-        }
-        
-        /* Для очень маленьких экранов */
-        @media (max-width: 360px) {
-            .name {
-                font-size: 24px;
-            }
-            
-            .title {
-                font-size: 10px;
-            }
-            
-            .agency-name {
-                font-size: 10px;
-            }
-            
-            .formula-title {
-                font-size: 13px;
-            }
-            
-            .formula-list, .formula-stats {
-                font-size: 10px;
+                bottom: 94px;
+                right: 11px;
             }
             
             .column-item {
                 font-size: 9px;
             }
             
+            .column-icon {
+                width: 16px;
+                height: 16px;
+            }
+            
             .learn-more-btn {
-                font-size: 14px;
+                bottom: 17px;
+                left: 22px;
+                right: 22px;
+                width: calc(100% - 44px);
+                font-size: 14.5px;
+                padding: 15px 22px;
+            }
+        }
+        
+        /* Для очень маленьких экранов - просто центрируем карточку */
+        @media (max-width: 360px) {
+            body {
+                padding: 5px;
+            }
+            
+            .visiting-card {
+                width: 100%;
+                max-width: 320px;
+                height: 780px;
             }
         }
         
         /* Для высоких экранов */
         @media (min-height: 800px) and (max-width: 480px) {
             .visiting-card {
-                max-height: 800px;
+                height: 780px;
+            }
+        }
+        
+        /* Для горизонтальной ориентации */
+        @media (max-width: 480px) and (orientation: landscape) {
+            body {
+                padding: 5px;
+            }
+            
+            .visiting-card {
+                width: 320px;
+                height: 780px;
             }
         }
     </style>
